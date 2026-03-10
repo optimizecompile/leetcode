@@ -11,8 +11,8 @@ public:
             int other = target - nums[i];
             if (ht.count(other)) {
                 /* Only one solution for purpose of this problem */
-                res.append(ht[other]);
-                res.append(i);
+                res.push_back(ht[other]);
+                res.push_back(i);
                 return res;
             }
             ht[nums[i]] = i;
