@@ -18,13 +18,15 @@ private:
         if (stack.size() == nums.size()) {
             res.push_back(stack);
         } else {
+            // Reverse order is allowed in permutation so in each level it could
+            // select from nums[0...size-1] except from the selected[used] ones.
             for (int i = 0; i < nums.size(); i++) {
                 // used marks remaining allowable elements in the next DFS level
                 if (!used[i]) {
                     if (i > 0 && !used[i - 1] && nums[i - 1] == nums[i]) {
                         // !used[i - 1] means the upper DFS level does not contain
                         // nums[i - 1] such that we need to exclude the duplicate
-                        // enumeration that has been recorded with used[i-1]==true.
+                        // permutation in different order.
                         continue;
                     }
                     stack.push_back(nums[i]);

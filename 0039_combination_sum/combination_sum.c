@@ -17,7 +17,8 @@ static void dfs(int *nums, int size, int start, int target, int *stack,
     } else {
         for (i = start; i < size; i++) {
             stack[len] = nums[i];
-            /* The elements in solution can be duplicate for the purpose of the problem */
+            /* The elements can be duplicate selected for the purpose of the
+             * problem. So we pass the i index to the next level */
             dfs(nums, size, i, target - nums[i], stack, len + 1, results, count, column_sizes);
         }
     }

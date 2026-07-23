@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+/* E.X. 123456789
+ * 21436587
+ * 43218765
+ * 87654321
+ */
 static uint32_t reverseBits(uint32_t n)
 {
     const uint32_t MASK1 = 0x55555555;
@@ -24,6 +29,6 @@ int main(int argc, char **argv)
         exit(-1);
     }
 
-    printf("%u\n", reverseBits(atoi(argv[1])));
+    printf("%x\n", reverseBits(atoi(argv[1])));
     return 0;
 }

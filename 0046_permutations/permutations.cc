@@ -19,7 +19,8 @@ private:
             return;
         }
 
-        // Reverse order is allowed in different levels, always starts from [0]
+        // Reverse order is allowed in permutation so in each level it could
+	// select from nums[0...size-1] except from the selected[used] ones.
         for (int i = 0; i < nums.size(); i++) {
             if (!used[i]) {
                 // Used marks all the allowable remaining elements in the next

@@ -16,6 +16,8 @@ static void dfs(int n, int k, int start, int *stack, int len,
     } else {
         for (i = start; i <= n; i++) {
             stack[len] = i;
+            /* Each element can only be selected once so we pass i+1 to the next
+             * level.*/
             dfs(n, k, i + 1, stack, len + 1, results, count, col_sizes);
         }
     }

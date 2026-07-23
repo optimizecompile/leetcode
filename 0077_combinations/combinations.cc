@@ -18,6 +18,8 @@ private:
         } else {
             for (int i = start; i <= n; i++) {
                 stack.push_back(i);
+                /* Each element can only be selected once so we pass i+1 to the
+                 * next level.*/
                 dfs(n, k, i + 1, res);
                 stack.pop_back();
             }
